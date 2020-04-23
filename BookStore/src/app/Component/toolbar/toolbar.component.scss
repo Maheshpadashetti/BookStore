@@ -1,38 +1,36 @@
-.main{
-    display: flex;
-    height: 700px;
-    width: 85%;
-    background-color: blue;
-    justify-content: center;
-    float: center;
-    align-content: center;
-    margin-left: 8%;
-
-}
-
 .toolbar{
     display: flex;
-    height: 10%;
-    width: 100%;
+    height: 20%;
+    width: 85%;
+    margin-left: 8%;
    
     background-color: rgba(224, 34, 34, 0.829);
 }
 .logo {
+    display: flex;
     height: 35px;
     width: 50px;
-    padding-top: 13px;
+    padding-top: 10px;
     padding-right: 20px;
     padding-left: 20px;
     opacity: 0.9;
     padding-left: 10%;
   }
+  .searchboxinput {
+    display: flex;
+    
+  }
+  .cart{
+    display: flex; 
+    float: left;
+  }
   .title {
-    display: inline-block;
-    font-family: "Product Sans", Arial, sans-serif;
+    display: flex;
+    
     color: rgb(255, 254, 254);
     font-size: 20px;
     
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     line-height: 24px;
     padding-right: 80px;
   }
