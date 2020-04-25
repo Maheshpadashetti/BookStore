@@ -1,0 +1,25 @@
+.smallcard {
+    display: block;
+    width: 100%;
+    height: 600px;
+    touch-action: pinch-zoom;
+    border:1px solid whitesmoke;
+}
+.card {
+    height: 260px;
+    width: 240px;
+    background-color: wheat;
+}
+.column {
+    float: left;
+    width: 24.33%;
+    padding: 0px;
+    height: 270px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -1,0 +1,47 @@
+
+
+  
+   
+    <div style="border-radius: 2em;background-color: black; width: 85%;margin-left: 8%;">
+    <mat-card class="smallcard">
+        <mat-toolbar>
+            <mat-toolbar-row>
+        <div style="padding-left: 80px;" fxLayout = "row">
+    <h3> Books </h3>
+        </div>
+    <div fxLayout = "row" style="margin-left: 70%; ">
+        <button style="background-color: white;height: 35px;">
+    <mat-form-field>
+        <select matNativeControl required style="padding-left: 25px;border: none; outline: none;">
+          <option value="volvo">Price: Low to High</option>
+          <option value="saab">Price: High to Low</option>
+          <option value="mercedes">Newest Arrivals</option>
+          <option value="audi">Sort by relevance</option>
+        </select>
+      </mat-form-field>
+    </button>
+    </div>
+    </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="row">
+        <div class="column" *ngFor = "let books of book">
+        <mat-card class="card" style="padding: 0px;">
+
+        {{books.price}}
+        </mat-card>
+    
+        </div>
+        </div>
+    
+    </mat-card>
+    </div> 
+    <!-- <div class="card text-centre m-3">
+    <div class="card-body" *ngFor = "let books of book">
+    
+    <mat-card style="width: 200px;height: 200px;background-color: black;">
+    
+      {{books.price}}
+    </mat-card>
+    
+    </div> -->
