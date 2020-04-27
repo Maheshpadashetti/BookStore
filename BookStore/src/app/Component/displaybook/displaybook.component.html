@@ -1,22 +1,22 @@
 
 
-  
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
    
-    <div style="border-radius: 2em;background-color: black; width: 85%;margin-left: 8%;">
+    <div class="main" >
     <mat-card class="smallcard">
         <mat-toolbar>
             <mat-toolbar-row>
         <div style="padding-left: 80px;" fxLayout = "row">
-    <h3> Books </h3>
+    <h3 style="font-family: 'Ubuntu', sans-serif;"> Books </h3>
         </div>
     <div fxLayout = "row" style="margin-left: 70%; ">
         <button style="background-color: white;height: 35px;">
     <mat-form-field>
         <select matNativeControl required style="padding-left: 25px;border: none; outline: none;">
-          <option value="volvo">Price: Low to High</option>
-          <option value="saab">Price: High to Low</option>
-          <option value="mercedes">Newest Arrivals</option>
-          <option value="audi">Sort by relevance</option>
+          <option value="volvo" style="font-family: 'Ubuntu', sans-serif;">Price: Low to High</option>
+          <option value="saab"style="font-family: 'Ubuntu', sans-serif;">Price: High to Low</option>
+          <option value="mercedes"style="font-family: 'Ubuntu', sans-serif;">Newest Arrivals</option>
+          <option value="audi"style="font-family: 'Ubuntu', sans-serif;">Sort by relevance</option>
         </select>
       </mat-form-field>
     </button>
@@ -27,8 +27,15 @@
     <div class="row">
         <div class="column" *ngFor = "let books of book">
         <mat-card class="card" style="padding: 0px;">
-
-        {{books.price}}
+            <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br>
+            <span class="bookname" style="font-family: 'Ubuntu', sans-serif; ">{{books.bookName}}</span><br>
+            <span class="author" style="font-family: 'Ubuntu', sans-serif;">by {{books.authorName}}</span><br>
+            <span class="price" style="font-family: 'Ubuntu', sans-serif;">{{books.price}}</span>
+        
+            <div class="buttons">
+                <button class="button1">ADD TO BAG </button>
+                <button class="button2">WISHLIST</button>
+            </div>
         </mat-card>
     
         </div>
@@ -36,12 +43,4 @@
     
     </mat-card>
     </div> 
-    <!-- <div class="card text-centre m-3">
-    <div class="card-body" *ngFor = "let books of book">
-    
-    <mat-card style="width: 200px;height: 200px;background-color: black;">
-    
-      {{books.price}}
-    </mat-card>
-    
-    </div> -->
+   

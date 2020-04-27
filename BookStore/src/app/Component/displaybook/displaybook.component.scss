@@ -1,14 +1,27 @@
+.main{
+    
+    border-color: black; 
+    width: 85%;
+    margin-left: 8%;
+   
+}
+
 .smallcard {
     display: block;
-    width: 100%;
+    width: 85%;
     height: 600px;
+    align-items: center;
     touch-action: pinch-zoom;
     border:1px solid whitesmoke;
+    background-color: whitesmoke;
+    margin-left: 8%;
 }
 .card {
     height: 260px;
     width: 240px;
-    background-color: wheat;
+    background-color: white;
+    align-items: center;
+    align-content: center;
 }
 .column {
     float: left;
@@ -23,3 +36,44 @@
     display: table;
     clear: both;
   }
+  .bookimage{
+      height: 140px;
+      width: 120px;
+      padding-left: 50px;
+      padding-top: 10px;
+  }
+  .author{
+      float: center;
+      margin-left: 55px;
+      font-size: x-small;
+      }
+      .bookname{
+          margin-left: 55px;
+      }
+   .price{
+    margin-left: 55px;
+   }   
+
+   .buttons{
+       background-color: transparent;
+       width: 100%;
+   }
+   .button1{
+    margin-left: 8%;
+       background-color: brown;
+       border-color: brown;
+       color: white;
+       font-family: 'Ubuntu', sans-serif;
+       outline: none;
+        // font-size: x-small;
+        // height: 60%;
+        // width: 40%;
+   }
+   .button2{
+       margin-left: 8%;
+    background-color: white;
+    border-color: black;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    outline: none;
+}
