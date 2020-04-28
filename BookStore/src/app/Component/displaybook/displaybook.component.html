@@ -6,11 +6,13 @@
     <mat-card class="smallcard">
         <mat-toolbar>
             <mat-toolbar-row>
-        <div style="padding-left: 80px;" fxLayout = "row">
-    <h3 style="font-family: 'Montserrat', sans-serif;"> Books </h3>
+        <div fxLayout = "row">
+    <h3 style="font-family: 'Montserrat', sans-serif; float: left;"> Books <span style="font-size: 11px; color: rgb(139, 136, 136);"
+        >({{ size }} items)</span
+      ></h3>
         </div>
     <div fxLayout = "row" style="margin-left: 70%; ">
-        <button style="background-color: white;height: 35px;">
+        <button style="box-shadow: 0 0 1px rgba(0,0,0,0.6); height: 25px;">
     <mat-form-field>
         <select matNativeControl required style="padding-left: 25px;border: none; outline: none;">
           <option value="volvo" style="font-family: 'Montserrat', sans-serif;">Price: Low to High</option>

@@ -16,7 +16,7 @@ export class DisplaybookComponent implements OnInit {
   items = [];
   pageofItems : Array<BookModule> = new Array<BookModule>();
   obj : BookModule[];
-
+  size: number;
   constructor( private service : BookService, private snakbar : MatSnackBar) { }
  
   ngOnInit() {
