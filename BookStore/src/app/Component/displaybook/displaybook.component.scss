@@ -3,13 +3,15 @@
     border-color: black; 
     width: 85%;
     margin-left: 8%;
-   
+    // border:  1px #555;
+    border:slategrey 1px;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.6);
 }
 
 .smallcard {
     display: block;
     width: 85%;
-    height: 600px;
+    height: 650px;
     align-items: center;
     touch-action: pinch-zoom;
     border:1px solid whitesmoke;
@@ -17,17 +19,18 @@
     margin-left: 8%;
 }
 .card {
-    height: 260px;
+    height: 280px;
     width: 240px;
     background-color: white;
     align-items: center;
+    box-shadow: 0 0 1px rgba(0,0,0,0.6);
     align-content: center;
 }
 .column {
     float: left;
     width: 24.33%;
     padding: 0px;
-    height: 270px; /* Should be removed. Only for demonstration */
+    height: 290px; /* Should be removed. Only for demonstration */
   }
   
   /* Clear floats after the columns */
@@ -37,21 +40,32 @@
     clear: both;
   }
   .bookimage{
-      height: 140px;
-      width: 120px;
-      padding-left: 50px;
-      padding-top: 10px;
+      height: 120px;
+      width: 100px;
+     
+      margin-left: 69px;
+        padding-top: 1em;
+        
+      align-content: center;
+      box-shadow: 0 1 0 7px rgba(0,0,0,0.6);
   }
   .author{
       float: center;
-      margin-left: 55px;
-      font-size: x-small;
+      margin-left: 10%;
+      font-size: 8px;
+      color: slategrey;
+      padding-top: -1em;
       }
       .bookname{
-          margin-left: 55px;
+          margin-left:10%;
+          padding-top: 1em;
+          font-size: 14px;
+          font-style: bold;
       }
    .price{
-    margin-left: 55px;
+    margin-left: 10%;
+    padding-top: -4PX;
+    font-size: 14px;
    }   
 
    .buttons{
@@ -59,21 +73,21 @@
        width: 100%;
    }
    .button1{
-    margin-left: 8%;
-       background-color: brown;
-       border-color: brown;
+    margin-left: 10%;
+    font-size: 10px;
+    height: 23px;
+    width: 90px;
+       background-color: rgba(224, 34, 34, 0.829);
+       border-color: rgba(224, 34, 34, 0.829);
        color: white;
-       font-family: 'Ubuntu', sans-serif;
-       outline: none;
-        // font-size: x-small;
-        // height: 60%;
-        // width: 40%;
+       
+       outline:rgba(224, 34, 34, 0.829);
+    
    }
    .button2{
        margin-left: 8%;
-    background-color: white;
-    border-color: black;
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
+       font-size: 10px;
+    height: 23px;
+    width: 90px;
     outline: none;
 }

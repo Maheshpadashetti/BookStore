@@ -3,7 +3,7 @@
     height: 20%;
     width: 85%;
     margin-left: 8%;
-   
+    
     background-color: rgba(224, 34, 34, 0.829);
 }
 .logo {
@@ -23,6 +23,13 @@
   .cart{
     display: flex; 
     float: left;
+  }
+  .label{
+    display: flex; margin-left: 180px;
+     margin-top: 12px;
+    height: 40px;
+    width: 40px;
+    color: white;
   }
   .title {
     display: flex;
