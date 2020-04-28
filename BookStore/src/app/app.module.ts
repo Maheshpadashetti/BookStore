@@ -14,12 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { DisplaybookComponent } from './Component/displaybook/displaybook.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
+import { BooksearchpipePipe } from './Pipe/booksearchpipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ToolbarComponent,
-    DisplaybookComponent
+    DisplaybookComponent,
+    BooksearchpipePipe
   ],
   imports: [
     BrowserModule,

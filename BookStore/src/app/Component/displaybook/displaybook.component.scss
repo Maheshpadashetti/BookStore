@@ -11,11 +11,12 @@
 .smallcard {
     display: block;
     width: 85%;
-    height: 650px;
+    height: 621px;
     align-items: center;
     touch-action: pinch-zoom;
     border:1px solid whitesmoke;
     background-color: whitesmoke;
+    border-bottom: whitesmoke;
     margin-left: 8%;
 }
 .card {
@@ -92,3 +93,15 @@
 
     outline: none;
 }
+.button3{
+    margin-left: 10%;
+    font-size: 10px;
+    height: 23px;
+    width: 200px;
+       background-color: rgba(36, 120, 230, 0.829);
+       border-color: rgba(36, 120, 230, 0.829);
+       color: white;
+       
+       outline:rgba(224, 34, 34, 0.829);
+    
+   }

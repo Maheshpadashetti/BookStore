@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from 'src/app/Service/book.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  bookName: string;
+  constructor( private service : BookService, ) { }
 
   ngOnInit(): void {
   }
-
+  bookSearch() {
+    // console.log(this.bookName);
+    this.service.setSearchBookData(this.bookName);
+  }
 }

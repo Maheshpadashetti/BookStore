@@ -27,17 +27,24 @@
     </mat-toolbar>
 
     <div class="row">
-        <div class="column" *ngFor = "let books of book">
+        <div class="column" *ngFor = "let books of book | booksearchpipe : bookSearch">
         <mat-card class="card" style="padding: 0px;">
             <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
             <span class="bookname" style="font-family: 'Raleway', sans-serif; ">{{books.bookName}}</span><br>
             <h2 class="author" style="font-family: 'Raleway', sans-serif;">by {{books.authorName}}</h2>
             <h2 class="price" >Rs.{{books.price}}</h2>
-        
+            <div
+            class="availablity"
+            style="font-size: large;"
+            *ngIf="!books.quantity"
+          >
+            Out Of stock
+          </div>
             <div class="buttons">
                 
-                <button class="button1" style="font-family: 'Raleway', sans-serif;">ADD TO BAG </button>
+                <button class="button1" (click)="addtobag()"style="font-family: 'Raleway', sans-serif;">ADD TO BAG </button>
                 <button class="button2" style="font-family: 'Raleway', sans-serif;">WISHLIST</button>
+                <!-- <button class="button3"  style="font-family: 'Raleway', sans-serif;">ADDED TO BAG</button> -->
             </div>
         </mat-card>
     
