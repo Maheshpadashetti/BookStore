@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DisplaybookComponent } from './Component/displaybook/displaybook.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatBadgeModule} from '@angular/material/badge';
 import { BooksearchpipePipe } from './Pipe/booksearchpipe.pipe';
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BooksearchpipePipe } from './Pipe/booksearchpipe.pipe';
     BooksearchpipePipe
   ],
   imports: [
+    MatBadgeModule,
     BrowserModule,
     MatToolbarModule,
     AppRoutingModule,

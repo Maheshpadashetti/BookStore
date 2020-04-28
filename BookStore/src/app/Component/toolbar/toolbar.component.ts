@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { BookService } from 'src/app/Service/book.service';
 
 @Component({
@@ -9,12 +9,23 @@ import { BookService } from 'src/app/Service/book.service';
 export class ToolbarComponent implements OnInit {
 
   bookName: string;
+ length : any;
+ 
   constructor( private service : BookService, ) { }
 
   ngOnInit(): void {
+    this.length  = sessionStorage.length;
+    
   }
   bookSearch() {
     // console.log(this.bookName);
     this.service.setSearchBookData(this.bookName);
   }
+
+
+
+  getUpdatedNotes(event) {
+this.ngOnInit();
+}
+
 }

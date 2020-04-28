@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { BookService } from 'src/app/Service/book.service';
 import {MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
 import { BookModule } from 'src/app/Model/book/book.module';
@@ -20,13 +20,16 @@ export class DisplaybookComponent implements OnInit {
   book_id:number;
   bookSearch: any;
   bookName: string;
+  length : any = sessionStorage.length;
+  @Output() output : EventEmitter<any> = new EventEmitter();
+
   constructor( private service : BookService, private snakbar : MatSnackBar) { }
  
   ngOnInit() {
 
     this.getallBooks();
     this.items = Array(11).fill(0).map((x, i) => ( { array : this.book }));  
-    this.addtobag();
+    // this.addtobag();
   }
 
   getallBooks() {
@@ -41,15 +44,19 @@ export class DisplaybookComponent implements OnInit {
     this.getSearchBookData();
   }
 
-    addtobag()
+    addtobag( bookId : any)
     {
-  //     this.service.getallBooks().subscribe( response => {
-  //       let book_id=response.bookList.bookid;
-  //       sessionStorage.setItem(book_id);
-   
-  // });
+  sessionStorage.setItem('bookIds'+bookId,bookId);
+  this.getOutput();
 }
 
+getOutput() {
+    this.output.emit("ok");
+  }
+
+  getUpdatedNotes(event) {
+    this.ngOnInit();
+    }
 
 onChangePage( pageofItems : Array<any>) {
  this.pageofItems = pageofItems;
