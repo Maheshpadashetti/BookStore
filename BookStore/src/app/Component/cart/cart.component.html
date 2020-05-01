@@ -3,13 +3,13 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step>
         <div class="main-conatiner">
-        <ng-template matStepLabel>My Cart</ng-template>
+        <!-- <ng-template matStepLabel>My Cart</ng-template> -->
 
         <div class="row">
           <div class="column">
-            <!-- <div>
-              <mat-card-title>My Cart</mat-card-title>
-            </div> -->
+            <div>
+              <mat-card-title style="margin-left: 30px;">My Cart</mat-card-title>
+            </div>
           <mat-card class="card" style="padding: 0px;">
               <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
               <span class="bookname" style="font-family: 'Raleway', sans-serif; ">{{books.bookName}}</span><br>
@@ -113,8 +113,8 @@
                   <section class="example-section">
                     <label class="example-margin">Type:</label>
                     <mat-radio-group >
-                      <mat-radio-button class="example-margin" value="after">Home</mat-radio-button>
-                      <mat-radio-button class="example-margin" value="before">Work</mat-radio-button>
+                      <mat-radio-button class="example-margin" value="Home">Home</mat-radio-button>
+                      <mat-radio-button class="example-margin" value="Work">Work</mat-radio-button>
                       <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
                     </mat-radio-group>
                   </section>
@@ -130,7 +130,7 @@
                   <div class="row">
                     <div class="column">
                       <div>
-                        <mat-card-title>Order Summary</mat-card-title>
+                        <mat-card-title style="margin-left: 30px;">Order Summary</mat-card-title>
                       </div>
                     <mat-card class="card" style="padding: 0px;">
                         <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
