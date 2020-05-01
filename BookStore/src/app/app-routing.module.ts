@@ -3,13 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './Component/home/home.component';
 import { ToolbarComponent } from './Component/toolbar/toolbar.component';
 import { DisplaybookComponent } from './Component/displaybook/displaybook.component';
+import { CartComponent } from './Component/cart/cart.component';
 
 
 const routes: Routes = [
-  {path:"home",component:HomeComponent},
-  {path:"",component:ToolbarComponent},
   {path:"toolbar",component:ToolbarComponent},
-  {path:"displaybook",component:DisplaybookComponent}
+  {path:"",component:DisplaybookComponent},
+  {path:"index",component:DisplaybookComponent},
+//   {path:"",component:ToolbarComponent,
+//   children:[
+//   {path:"displaybook",component:DisplaybookComponent},
+//   {path:"cart",component:CartComponent},
+// ]},
+  {path:"cart",component:CartComponent}
 ];
 
 @NgModule({
