@@ -7,26 +7,21 @@
 
         <div class="row">
           <div class="column">
+            <!-- <div>
+              <mat-card-title>My Cart</mat-card-title>
+            </div> -->
           <mat-card class="card" style="padding: 0px;">
               <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
               <span class="bookname" style="font-family: 'Raleway', sans-serif; ">{{books.bookName}}</span><br>
               <h2 class="author" style="font-family: 'Raleway', sans-serif;">by {{books.authorName}}</h2>
               <h2 class="price" >Rs.{{books.price}}</h2>
               <div class="buttons">
-                  <button class="button3"  style="font-family: 'Raleway', sans-serif;">PLACE ORDER</button>
+                  <button class="button1"  style="font-family: 'Raleway', sans-serif;">PLACE ORDER</button>
               </div>
           </mat-card>
       
           </div>
           </div>
-
-
-
-
-
-
-
-
         <div class="form-conatiner">
             <mat-card fxLayoutAlign="center center" fxLayout="column">
               <div>
@@ -75,14 +70,7 @@
                   <div class="name-contact">
                     <div fxFlex="45">
                       <mat-form-field appearance="outline">
-                        <input
-                          id="pinCode"
-                          matInput
-                          formControlName="pinCode"
-                          placeholder="Pincode"
-                          autocomplete="off"
-                          required
-                        />
+                        <input  id="pinCode"  matInput  formControlName="pinCode"  placeholder="Pincode"autocomplete="off"required/>
                       </mat-form-field>
                       <!-- <span>
                         <mat-error *ngIf="f.pinCode.touched && f.pinCode.errors">
@@ -132,11 +120,32 @@
                   </section>
                   </mat-card-content>
                   <div class="buttons">
-                    <button class="button3"  style="font-family: 'Raleway', sans-serif;">PLACE ORDER</button>
+                    <button class="button3"  style="font-family: 'Raleway', sans-serif;">CONTINUE</button>
                 </div>
                   </form>
                   </mat-card>
                   </div>
+
+
+                  <div class="row">
+                    <div class="column">
+                      <div>
+                        <mat-card-title>Order Summary</mat-card-title>
+                      </div>
+                    <mat-card class="card" style="padding: 0px;">
+                        <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
+                        <span class="bookname" style="font-family: 'Raleway', sans-serif; ">{{books.bookName}}</span><br>
+                        <h2 class="author" style="font-family: 'Raleway', sans-serif;">by {{books.authorName}}</h2>
+                        <h2 class="price" >Rs.{{books.price}}</h2>
+                        <div class="buttons">
+                            <button class="button1"  style="font-family: 'Raleway', sans-serif;">CHECKOUT</button>
+                        </div>
+                    </mat-card>
+                
+                    </div>
+                    </div>
+
+
                   </div>
 </mat-step>
 </mat-horizontal-stepper>

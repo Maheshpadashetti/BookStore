@@ -15,6 +15,7 @@
     border: 1px solid gray;
     margin: 10px;
     padding: 10px;
+    
   }
 form {
     width: 40rem;
@@ -32,7 +33,6 @@ form {
     
   }
   .address {
-   
     width: 82%;
     //display: flex;
    // flex-direction: row;
@@ -70,12 +70,12 @@ form {
    //box-shadow: 0 0 1px rgba(0,0,0,0.6);
     align-content: center;
 }
-.column {
-    float: left;
-    width:100%;
-    padding: 0px;
-    height: 290px; /* Should be removed. Only for demonstration */
-  }
+// .column {
+//     float: left;
+//     width:100%;
+//     padding: 0px;
+   
+//   }
   
   /* Clear floats after the columns */
   .row:after {
@@ -117,7 +117,21 @@ form {
        width: 100%;
    }
 .button3{
-    margin-left: 100%;
+  display: flexbox;
+    margin-left: 60%;
+    font-size: 10px;
+    height: 26px;
+    width: 200px;
+       background-color: rgba(36, 120, 230, 0.829);
+       border-color: rgba(36, 120, 230, 0.829);
+       color: white;
+       
+       outline:rgba(224, 34, 34, 0.829);
+    
+   }
+   .button1{
+     display: flexbox;
+    margin-left: 165%;
     font-size: 10px;
     height: 26px;
     width: 200px;
