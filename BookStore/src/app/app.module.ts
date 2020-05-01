@@ -16,13 +16,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatBadgeModule} from '@angular/material/badge';
 import { BooksearchpipePipe } from './Pipe/booksearchpipe.pipe';
+import { CartComponent } from './Component/cart/cart.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ToolbarComponent,
     DisplaybookComponent,
-    BooksearchpipePipe
+    BooksearchpipePipe,
+    CartComponent
   ],
   imports: [
     MatBadgeModule,
@@ -36,6 +41,9 @@ import { BooksearchpipePipe } from './Pipe/booksearchpipe.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    MatRadioModule
     
     
 
