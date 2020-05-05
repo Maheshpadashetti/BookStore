@@ -7,6 +7,7 @@ export const environment = {
 
   BookUrl:"http://localhost:8080/books/",
   getallbooksurl:"getbooks",
+  getbookbyIdurl:"getbookbyId"
 };
 
 

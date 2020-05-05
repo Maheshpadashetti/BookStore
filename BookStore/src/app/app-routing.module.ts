@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:"toolbar",component:ToolbarComponent},
   {path:"",component:DisplaybookComponent},
   {path:"index",component:DisplaybookComponent},
+  
 //   {path:"",component:ToolbarComponent,
 //   children:[
 //   {path:"displaybook",component:DisplaybookComponent},

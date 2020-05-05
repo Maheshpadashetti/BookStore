@@ -5,6 +5,7 @@ import {MatSnackBarModule } from '@angular/material/snack-bar';
 import { BookService } from 'src/app/Service/book.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { BookModule } from 'src/app/Model/book/book.module';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ import { BookModule } from 'src/app/Model/book/book.module';
 export class CartComponent implements OnInit {
   isLinear = false;
   customerForm: FormGroup;
-  book: any;
+  book=[];
   books: BookModule = new BookModule();
   items = [];
   pageofItems : Array<BookModule> = new Array<BookModule>();
@@ -24,6 +25,7 @@ export class CartComponent implements OnInit {
   bookSearch: any;
   bookName: string;
   length : any = sessionStorage.length;
+  value:any=[];
   @Output() output : EventEmitter<any> = new EventEmitter();
 
 
@@ -31,7 +33,11 @@ export class CartComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: Router,private service : BookService,) { }
 
-  ngOnInit()  {this.customerForm = this.formBuilder.group({
+  ngOnInit()  {
+
+    this.getsession();
+    //this.getallBooks();
+    this.customerForm = this.formBuilder.group({
     customerName: ["", Validators.required],
     contact: [
       "",
@@ -51,6 +57,26 @@ export class CartComponent implements OnInit {
     landMark: ["", [Validators.required]],
   });
   
+}
+
+getsession():any{
+for(let i=0;i<sessionStorage.length;i++){
+  let key=sessionStorage.key(i);
+  this.value[i]=sessionStorage.getItem(key);
+  console.log("key",key);
+  this.service.getBokkByid(this.value[i]).subscribe((response:any)=>{
+   console.log(response);
+   this.book[i]=response.obj;
+   console.log(this.book,'kkkkkkkk');
+  // console.log(this.book.bookName,'kkkkkkkk111111111111111111');
+   return this.book;
+   
+    
+    
+    
+  });
+  
+}
 }
 
 }

@@ -21,18 +21,23 @@ export class DisplaybookComponent implements OnInit {
   bookSearch: any;
   bookName: string;
   length : any = sessionStorage.length;
+  s:any;
+  value:any=[];
   @Output() output : EventEmitter<any> = new EventEmitter();
 
   constructor( private service : BookService, private snakbar : MatSnackBar) { }
  
   ngOnInit() {
-
     this.getallBooks();
     this.items = Array(11).fill(0).map((x, i) => ( { array : this.book }));  
     // this.addtobag();
+   
   }
 
   getallBooks() {
+ 
+  
+  
     this.service.getallBooks().subscribe( response => {
      this.book = response.bookList;
      this.obj = response.bookList;
@@ -66,6 +71,22 @@ getSearchBookData() {
     console.log("search data", message.books);
     this.bookSearch = message.books;
   });
+  
+  
 }
-
+// getsession(){
+//   let s=sessionStorage.getItem('key');
+//   console.log(s,'asaaaaaaaaaaaaa');
+// for(let i=0;i<sessionStorage.length;i++){
+//   let key=sessionStorage.key(i);
+//   this.value[i]=sessionStorage.getItem(key);
+//   console.log("key",key);
+//   this.service.getBokkByid(this.value[i]).subscribe((response:any)=>{
+//     console.log(response);
+//     this.book=response.getBokkByid;
+    
+//   });
+  
+// }
+// }
 }

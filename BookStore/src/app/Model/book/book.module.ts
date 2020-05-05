@@ -16,4 +16,6 @@ export class BookModule {
   authorName:String;
   bookName:String;
   price:number;
+  quantity:number;
+  image:string;
  }
