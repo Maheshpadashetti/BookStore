@@ -7,7 +7,11 @@ export const environment = {
 
   BookUrl:"http://localhost:8080/books/",
   getallbooksurl:"getbooks",
-  getbookbyIdurl:"getbookbyId"
+  getbookbyIdurl:"getbookbyId",
+  addandupdatecartUrl:"addandupdatecart",
+
+  CartUrl:"http://localhost:8080/",
+  addUrl:"addCustomerDetails/",
 };
 
 
