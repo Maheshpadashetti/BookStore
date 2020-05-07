@@ -3,7 +3,7 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step>
         <div class="main-conatiner">
-        <ng-template matStepLabel>My Cart</ng-template>
+        <!-- <ng-template matStepLabel>My Cart</ng-template> -->
 
         <div class="row">
           <div class="column" *ngFor = "let books of book ">
@@ -161,7 +161,7 @@
                   <div class="row">
                     <div class="column" *ngFor = "let books of book ">
                       <div>
-                        <mat-card-title>Order Summary</mat-card-title>
+                        <mat-card-title style="margin-left: 30px;">Order Summary</mat-card-title>
                       </div>
                     <mat-card class="card" style="padding: 0px;">
                         <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>

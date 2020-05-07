@@ -9,6 +9,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { CartService } from 'src/app/Service/cart.service';
 import { Customer } from 'src/app/Model/customer.model';
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',

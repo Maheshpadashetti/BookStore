@@ -20,6 +20,7 @@ import { CartComponent } from './Component/cart/cart.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { OrdergreetingComponent } from './Component/ordergreeting/ordergreeting.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import {MatRadioModule} from '@angular/material/radio';
     ToolbarComponent,
     DisplaybookComponent,
     BooksearchpipePipe,
-    CartComponent
+    CartComponent,
+    OrdergreetingComponent
   ],
   imports: [
     MatBadgeModule,
@@ -49,6 +51,7 @@ import {MatRadioModule} from '@angular/material/radio';
 
   ],
   providers: [HttpClient],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
