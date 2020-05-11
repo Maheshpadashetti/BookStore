@@ -15,9 +15,9 @@
     <div fxLayout = "row" style="margin-left: 70%; ">
         <button style="box-shadow: 0 0 1px rgba(0,0,0,0.6); height: 25px;">
     <mat-form-field>
-        <select matNativeControl required style="padding-left: 25px;border: none; outline: none;">
-          <option value="volvo" style="font-family: 'Montserrat', sans-serif;">Price: Low to High</option>
-          <option value="saab"style="font-family: 'Montserrat', sans-serif;">Price: High to Low</option>
+        <select matNativeControl required style="padding-left: 25px;border: none; outline: none;"(click)="sorting(value)">
+          <option value="true" style="font-family: 'Montserrat', sans-serif;"(click)="sorting(true)">Price: Low to High</option>
+          <option value="false"style="font-family: 'Montserrat', sans-serif;"(click)="sorting(false)">Price: High to Low</option>
           <option value="mercedes"style="font-family: 'Montserrat', sans-serif;">Newest Arrivals</option>
           <!-- <option value="audi"style="font-family: 'Montserrat', sans-serif;">Sort by relevance</option> -->
         </select>
@@ -27,8 +27,8 @@
     </mat-toolbar-row>
     </mat-toolbar>
 
-    <div class="row">
-        <div class="column" *ngFor = "let books of book | booksearchpipe : bookSearch">
+    <div class="row" *ngIf = "pageEvent">
+        <div class="column" *ngFor = "let books of boo | booksearchpipe : bookSearch">
         <mat-card class="card" style="padding: 0px;">
             <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
             <span class="bookname" style="font-family: 'Raleway', sans-serif; ">{{books.bookName}}</span><br>
@@ -41,11 +41,19 @@
           >
             Out Of stock
           </div>
-            <div class="buttons">
-                
-                <button class="button1" (output) = "getUpdatedNotes($event)" (click)="addtobag( books.bookId)"style="font-family: 'Raleway', sans-serif;">ADD TO BAG </button>
-                <button class="button2" style="font-family: 'Raleway', sans-serif;">WISHLIST</button>
+          <div class="buttons">
+            
+            <div  *ngIf="value[books.bookId-1]!=books.bookId; else elsecondition" style="margin-left: -13px;"> 
+              <button  class="button1" (output) = "getUpdatedNotes($event)" (click)="addtobag( books.bookId)
+              "style="font-family: 'Raleway', sans-serif;margin-top: 7px;">ADD TO BAG </button>
+              <button  class="button2" style="font-family: 'Raleway', sans-serif;">WISHLIST</button>
+            </div>
+
+            <ng-template  #elsecondition>
+              <div style="margin-top: 10px;">
                 <button class="button3"  style="font-family: 'Raleway', sans-serif;">ADDED TO BAG</button>
+              </div>
+            </ng-template>
             </div>
         </mat-card>
     
@@ -54,4 +62,8 @@
     
     </mat-card>
     </div> 
-   
+    <mat-paginator 
+[length] = "lengths" 
+[pageSize] = "pageSize" 
+(page) = "pageEvent = getData($event)">
+    </mat-paginator>

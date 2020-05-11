@@ -9,6 +9,7 @@ import { ToolbarComponent } from './Component/toolbar/toolbar.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { DisplaybookComponent } from './Component/displaybook/displaybook.component';
@@ -21,6 +22,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { OrdergreetingComponent } from './Component/ordergreeting/ordergreeting.component';
+import {MatIconModule} from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,8 @@ import { OrdergreetingComponent } from './Component/ordergreeting/ordergreeting.
     DisplaybookComponent,
     BooksearchpipePipe,
     CartComponent,
-    OrdergreetingComponent
+    OrdergreetingComponent,
+   
   ],
   imports: [
     MatBadgeModule,
@@ -38,6 +43,7 @@ import { OrdergreetingComponent } from './Component/ordergreeting/ordergreeting.
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatPaginatorModule,
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
@@ -45,7 +51,9 @@ import { OrdergreetingComponent } from './Component/ordergreeting/ordergreeting.
     MatSnackBarModule,
     MatStepperModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule,
+    FlexLayoutModule
     
     
 

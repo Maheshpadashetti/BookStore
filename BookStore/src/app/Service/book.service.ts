@@ -34,5 +34,11 @@ export class BookService {
     
     return this.httpService.get(this.bookApiUrl+environment.getbookbyIdurl+'/'+Bookid,this.httpOptions); 
   }
-  
+  getPagination(data) {
+    return this.http.get<any>( environment.BookUrl+environment.cusUrl+'/'+data);
+  }
+  sorting(value){
+    return this.http.get<any>(environment.BookUrl+environment.sorting+'?value='+value);
+  }
+
 }

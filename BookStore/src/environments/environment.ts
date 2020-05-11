@@ -9,9 +9,14 @@ export const environment = {
   getallbooksurl:"getbooks",
   getbookbyIdurl:"getbookbyId",
   addandupdatecartUrl:"addandupdatecart",
+  sorting:"sorting",
+  SortNewestArrival:"SortNewestArrival",
 
   CartUrl:"http://localhost:8080/",
-  addUrl:"addCustomerDetails/",
+  addUrl:"addcustomer",
+  cusUrl : "getpagewise",
+  addtocart:"addtocart",
+  getbookprice:"getbookprice"
 };
 
 

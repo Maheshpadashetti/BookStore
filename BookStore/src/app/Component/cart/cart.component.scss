@@ -1,31 +1,61 @@
-// .main-conatiner {
-//     border: 1px solid gray;
-//     margin: 10px;
-//     padding: 10px;
-//     justify-content: center;
-//   }
+.main-conatiner {
+    //border: 1px solid gray;
+   
+  border-color: transparent;    margin-top: 0%;
+    width: 87%;
+    margin-left: 7%;
+    // margin: 10px;
+    // padding: 10px;
+    justify-content: center;
+  }
 .form-conatiner{
   // border: 1px solid gray;
-  // margin: 10px;
+   margin: 20px;
   // padding: 10px;
   border-color: black; 
-  width: 70%;
+  width: 55%;
   margin-left: 14%;
   // border:  1px #555;
   border:slategrey 1px;
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.6);
+  height: auto;
 }
 
 
   .row{
     border: 1px solid gray;
-    margin: 25px;
-    //padding: 10px;
-    width: 70%;
+   height: auto;
+    width: 55%;
     border:slategrey 1px;
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.6);
     margin-left: 14%;
+   
     
+  }
+  .card2 {
+    height: auto;
+    width: 240px;
+    // background-color: pink;
+    align-items: center;
+    box-shadow: 0 0 1px rgba(0,0,0,0.6);
+    align-content: center;
+}
+.column1 {
+    float: left;
+    width: 35%;
+    padding: 0px;
+    // height: auto; /* Should be removed. Only for demonstration */
+  }
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+    border: 1px solid gray;
+    height: auto;
+     width: 55%;
+     border:slategrey 1px;
+     box-shadow: 0 0 2px 0 rgba(0,0,0,0.6);
+     margin-left: 14%;
   }
 form {
     width: 40rem;
@@ -36,24 +66,25 @@ form {
   }
   .name-contact {
     width: 100%;
-    display: flex;
+    display: flex; margin-left: 0%;
     flex-direction: row;
    justify-content: space-around;
    //justify-content: space-between;
     
   }
   .address {
-    width: 82%;
+    width: 95%;
     //display: flex;
    // flex-direction: row;
     //justify-content: space-around;
-     margin-left: 9%;
+     margin-left: 2%;
     // margin-right: 13px;
     //height: 100px;
     
   }
   #address {
     height: 60px;
+    width: 109%;
   }
   .mat-input-element{
       display: flex ;
@@ -65,20 +96,36 @@ form {
     display: flex;
     align-content: center;
     align-items: center;
-    height: 60px;
+    float: left;
+    height:auto;
+    
+    width: 90%;
+     margin-left: 11%;
+    
   }
   
   .example-margin {
-    margin: 0 10px;
-    
+    display: flex;
+    align-content: center;
+    float: left;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .card {
-    height: 280px;
+    height: auto;
     width: 240px;
     background-color: white;
     align-items: center;
    //box-shadow: 0 0 1px rgba(0,0,0,0.6);
     align-content: center;
+}
+.card1 {
+  height:auto;
+  width: 240px;
+  background-color: white;
+  align-items: center;
+ //box-shadow: 0 0 1px rgba(0,0,0,0.6);
+  align-content: center;
 }
 // .column {
 //     float: left;
@@ -88,47 +135,57 @@ form {
 //   }
   
   /* Clear floats after the columns */
-  .row:after {
+  .row1:after {
     content: "";
     display: table;
     clear: both;
   }
+  .details{
+    //  background-color: rgba(224, 34, 34, 0.829);
+    display: flex;
+     width: 50%;
+     height: 50%;
+      float: left;
+      
+       margin-left: 9em; 
+       margin-top: -9em;
+  }
   .bookimage{
-      height: 120px;
-      width: 100px;
-     
-      margin-left: 69px;
-        padding-top: 1em;
-        
+      height: 60%;
+      width: 40%;
+    margin-left: 13%;
       align-content: center;
       box-shadow: 0 1 0 7px rgba(0,0,0,0.6);
   }
   .author{
-      float: center;
-      margin-left: 10%;
-      font-size: 8px;
+      float: left;
+      margin-left: -2.1em;
+      font-size: 12px;
       color: slategrey;
-      padding-top: -1em;
+    padding-top:12px; 
+    
       }
       .bookname{
-          margin-left:10%;
-          padding-top: 1em;
-          font-size: 14px;
+          margin-left:10%; 
+          font-size: 20px;
           font-style: bold;
       }
    .price{
-    margin-left: 10%;
-    padding-top: -4PX;
-    font-size: 14px;
+    float: left;
+       margin-left: -6em;
+      font-size: 16px;
+      
+     padding-top: 28px;
    }   
 
+ 
    .buttons{
        background-color: transparent;
        width: 100%;
    }
 .button3{
   display: flexbox;
-    margin-left: 60%;
+    margin-left: 70%;
     font-size: 10px;
     height: 26px;
     width: 200px;
@@ -139,12 +196,38 @@ form {
        outline:rgba(224, 34, 34, 0.829);
     
    }
+   .button2{
+    margin-left: 60%;
+    display: flexbox;
+    //float: right;
+  
+   margin-bottom: 7%;
+   font-size: 10px;
+   height: 26px;
+   width: 180px;
+      background-color: rgba(36, 120, 230, 0.829);
+      border-color: rgba(36, 120, 230, 0.829);
+      color: white;
+      
+      outline:rgba(224, 34, 34, 0.829);
+   
+  }
+  .dobutton{
+    display: flex;
+    justify-content: right;
+    
+   // display: flexbox;
+    //float: right;
+    //margin-bottom: 3%;
+    //margin-right: 5.6em;
+  }
    .button1{
      display: flexbox;
-    margin-left: 67%;
+    margin-left: 55em;
+    margin-bottom: 7%;
     font-size: 10px;
     height: 26px;
-    width: 200px;
+    width: 180px;
        background-color: rgba(36, 120, 230, 0.829);
        border-color: rgba(36, 120, 230, 0.829);
        color: white;
