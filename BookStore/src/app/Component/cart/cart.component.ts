@@ -216,4 +216,17 @@ getprice(quantity):any{
     
   }
   }
+
+  addToCart(){
+    this.quantity = 1;
+    }
+    addItem(){
+      this.quantity=this.quantity+1;
+      console.log('plus is : '+this.quantity)
+      }
+
+      removeItem(){
+        this.quantity=this.quantity-1;
+        console.log('plus is : '+this.quantity)
+        }
 }

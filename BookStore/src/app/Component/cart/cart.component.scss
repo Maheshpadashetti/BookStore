@@ -66,14 +66,16 @@ form {
   }
   .name-contact {
     width: 100%;
-    display: flex; margin-left: 0%;
+    display: flex; 
+    margin-left: 0%;
     flex-direction: row;
    justify-content: space-around;
    //justify-content: space-between;
     
   }
   .address {
-    width: 95%;
+    width: 612px;
+    height: 82px;
     //display: flex;
    // flex-direction: row;
     //justify-content: space-around;
@@ -83,8 +85,8 @@ form {
     
   }
   #address {
-    height: 60px;
-    width: 109%;
+    width: 612px;
+    height: 82px;;
   }
   .mat-input-element{
       display: flex ;
@@ -94,9 +96,10 @@ form {
   
   .example-section {
     display: flex;
-    align-content: center;
+    text-align: left;
+   // align-content: center;
     align-items: center;
-    float: left;
+   // float: left;
     height:auto;
     
     width: 90%;
@@ -106,8 +109,9 @@ form {
   
   .example-margin {
     display: flex;
-    align-content: center;
-    float: left;
+   // align-content: center;
+    text-align: left;
+   // float: left;
     flex-direction: row;
     justify-content: space-around;
   }
@@ -187,10 +191,10 @@ form {
   display: flexbox;
     margin-left: 70%;
     font-size: 10px;
-    height: 26px;
-    width: 200px;
-       background-color: rgba(36, 120, 230, 0.829);
-       border-color: rgba(36, 120, 230, 0.829);
+    width: 151px;
+    height: 35px;
+       background-color: #3371B5;
+       border-color: #3371B5;
        color: white;
        
        outline:rgba(224, 34, 34, 0.829);
@@ -203,10 +207,10 @@ form {
   
    margin-bottom: 7%;
    font-size: 10px;
-   height: 26px;
-   width: 180px;
-      background-color: rgba(36, 120, 230, 0.829);
-      border-color: rgba(36, 120, 230, 0.829);
+   width: 151px;
+height: 35px;
+      background-color: #3371B5;
+      border-color: #3371B5;
       color: white;
       
       outline:rgba(224, 34, 34, 0.829);
@@ -226,10 +230,10 @@ form {
     margin-left: 55em;
     margin-bottom: 7%;
     font-size: 10px;
-    height: 26px;
-    width: 180px;
-       background-color: rgba(36, 120, 230, 0.829);
-       border-color: rgba(36, 120, 230, 0.829);
+    width: 151px;
+height: 35px;
+       background-color: #3371B5;
+       border-color: #3371B5;
        color: white;
        
        outline:rgba(224, 34, 34, 0.829);

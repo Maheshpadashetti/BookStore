@@ -29,7 +29,7 @@
                     <div style="display: flex; flex-direction: row;margin-bottom: 10px;">
                       <div style="height: 20px; width: 20px;">
                         <button
-                          style="  height: 30px;  width: 30px;  background-color: white  "  >  +
+                          style="  height: 30px;  width: 30px;  background-color: white  "  (click)="addItem()">  +
                         </button>
                       </div>
                       <div  style="  margin-left: 25px;  margin-right: 25px;  margin-top: 0px;  "
@@ -44,7 +44,7 @@
                             background-color:white;
                           "  
                          
-                        >
+                         (click)="removeItem()">
                           -
                         </button>
                       </div>
@@ -67,73 +67,37 @@
          
        </div>
       </div>
-        <div class="form-conatiner">
-          <a style="font-size:large ;margin-left: 40px;margin-top: 2%;">Customer Details</a>
+        <div class="form-conatiner" >
+          <a style="font-size:large ;margin-left: 40px;margin-top: 2%; ">Customer Details</a>
             <mat-card fxLayoutAlign="center center" fxLayout="column" *ngIf = "select">
-              <!-- <div>
-                <mat-card-title>Customer Details</mat-card-title>
-              </div> -->
+
               <form >
                 <mat-card-content>
                   <div class="name-contact" >
                     <div fxFlex="45" >
                       <mat-form-field  appearance="outline" >
-                        <input style="width: 250px;height: 30px;"  id="customerName" placeholder="Name" matInput [formControl]="Name"  autocomplete="off"  required    />
+                        <input style="width: 251px;height: 45px;"  id="customerName" placeholder="Name" matInput [formControl]="Name"  autocomplete="off"  required    />
                       </mat-form-field>
-                      <!-- <span style="font-size: 15px; margin-bottom: 6px;">
-                        <mat-error
-                          *ngIf="f.customerName.touched && f.customerName.errors"
-                          class="invalid-feedback"
-                        >
-                          <mat-error *ngIf="f.customerName.errors.required">
-                            Name is required</mat-error
-                          >
-                        </mat-error>
-                      </span> -->
+                    
                     </div>
                     <div fxFlex="45">
                       <mat-form-field appearance="outline">
-                        <input style="width: 250px;height: 30px;"  id="contact"  placeholder="Phone number" matInput [formControl]="phoneNumber"  required    />
+                        <input style="width: 251px;height: 45px;"  id="contact"  placeholder="Phone number" matInput [formControl]="phoneNumber"  required    />
                       </mat-form-field>
-                      <!-- <span style="font-size: 15px; margin-top: 10px;">
-                        <mat-error
-                          *ngIf="f.contact.touched && f.contact.errors"
-                          class="invalid-feedback"
-                        > 
-                          <mat-error *ngIf="f.contact.errors.required">
-                            *phone number is required</mat-error
-                          >
-                          <mat-error
-                            *ngIf="!f.contact.errors.required && f.contact.errors"
-                          >
-                            *phone must be 10 digit</mat-error
-                          >
-                        </mat-error> 
-                      </span> -->
+                     
                     </div>
                   </div>
       
                   <div class="name-contact"  style="margin-top: 15px;">
                     <div fxFlex="45">
                       <mat-form-field appearance="outline">
-                        <input style="width: 250px;height: 30px;" id="pinCode"  placeholder="Pincode" matInput [formControl]="pincode" autocomplete="off"required/>
+                        <input style="width: 251px;height: 45px;" id="pinCode"  placeholder="Pincode" matInput [formControl]="pincode" autocomplete="off"required/>
                       </mat-form-field>
-                      <!-- <span>
-                        <mat-error *ngIf="f.pinCode.touched && f.pinCode.errors">
-                          <mat-error *ngIf="f.pinCode.errors.required">
-                            Required
-                          </mat-error>
-                          <mat-error
-                            *ngIf="!f.pinCode.errors.required && f.pinCode.errors"
-                          >
-                            Invalid PinCode
-                          </mat-error>
-                        </mat-error>
-                      </span> -->
+                      
                     </div>
                     <div fxFlex="45">
                       <mat-form-field appearance="outline">
-                        <input style="width: 250px;height: 30px;" id="locality"  matInput [formControl]="locality"  placeholder="Locality" autocomplete="off" required/>
+                        <input style="width: 251px;height: 45px;" id="locality"  matInput [formControl]="locality"  placeholder="Locality" autocomplete="off" required/>
                       </mat-form-field>
                     </div>
                   </div>
@@ -147,12 +111,12 @@
                   <div class="name-contact" style="margin-top: 15px;">
                     <div fxFlex="45">
                       <mat-form-field appearance="outline">
-                        <input  style="width: 250px;height: 30px;" id="city" placeholder="City" matInput [formControl]="city" autocomplete="off" required/>
+                        <input  style="width: 251px;height: 45px" id="city" placeholder="City" matInput [formControl]="city" autocomplete="off" required/>
                       </mat-form-field>
                     </div>
                     <div fxFlex="45">
                       <mat-form-field appearance="outline">
-                        <input style="width: 250px;height: 30px;" id="landMark" placeholder="Landmark" matInput [formControl]="landmark" autocomplete="off" required/>
+                        <input style="width: 251px;height: 45px;" id="landMark" placeholder="Landmark" matInput [formControl]="landmark" autocomplete="off" required/>
                       </mat-form-field>
                     </div>
                   </div>

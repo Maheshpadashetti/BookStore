@@ -88,8 +88,6 @@ export class DisplaybookComponent implements OnInit {
        return this.book;
      });
      }
-
-    this.getSearchBookData();
     
   }
 
