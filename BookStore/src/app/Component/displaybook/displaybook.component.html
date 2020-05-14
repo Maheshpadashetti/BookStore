@@ -30,7 +30,7 @@
     <div class="row" *ngIf = "pageEvent"  >
         <div class="column" *ngFor = "let books of boo | booksearchpipe : bookSearch">
         <mat-card class="card" style="padding: 0px;">
-          <div style="height: auto ;width: 100%; background-color: rgba(245, 245, 245, 0.486);">
+          <div style="height: auto ;width: 100%; background-color: #F5F5F5;">
             <img src="assets\bookimage\{{books.image}}" class="bookimage" /><br><br></div>
             <span class="bookname" style="font-family: 'Lato', sans-serif; ">{{books.bookName}}</span><br>
             <h2 class="author" style="font-family: 'Lato', sans-serif;">by {{books.authorName}}</h2>

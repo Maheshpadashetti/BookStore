@@ -81,7 +81,8 @@ height: 29px;
        background-color:#A03037;
        border-color:#A03037;
        color: white;
-       
+       border-radius: 2px;
+opacity: 1;
        outline:#A03037;
     
    }
@@ -90,7 +91,8 @@ height: 29px;
        font-size: 11px;
        width: 93px;
        height: 29px;
-
+       border-radius: 2px;
+       opacity: 1;
     outline: none;
 }
 .button3{
@@ -102,6 +104,8 @@ height: 29px;
        border-color: rgba(36, 120, 230, 0.829);
        color: white;
        margin-top: 5px;
+       border-radius: 2px;
+opacity: 1;
        outline:#A03037;
     
    }
