@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { BookService } from 'src/app/Service/book.service';
 
 @Component({
@@ -10,7 +10,7 @@ export class ToolbarComponent implements OnInit {
 
   bookName: string;
  length : any;
- 
+ @Input() output : any;
   constructor( private service : BookService, ) { }
 
   ngOnInit(): void {

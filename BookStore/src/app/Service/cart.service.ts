@@ -15,14 +15,14 @@ export class CartService {
 
   post( arr:any):Observable<any> {
     console.log(arr,'custmerdetails');
-    return this.httpService.post(environment.CartUrl+environment.addUrl,arr,"Pradeep");
+    return this.httpService.post(environment.CartUrl+environment.addUrl,arr,"header");
   }
   addtocart(bookId:any,userId):Observable<any> {
     console.log(bookId,userId,"ssssssssss");
-        return this.httpService.get(environment.CartUrl+environment.addtocart+'/'+bookId+'/'+userId,"");
+        return this.httpService.get(environment.CartUrl+environment.addtocart+'/'+bookId+'/'+userId,"header");
   }
-  getbookprice(bookId:any,quantity):Observable<any> {
+  getbookprice(bookId:any,quantity:any):Observable<any> {
     console.log(bookId,quantity,"ssssssssss");
-        return this.httpService.post(environment.CartUrl+environment.addtocart,bookId,'/'+quantity);
+        return this.httpService.post(environment.CartUrl+environment.getbookprice+'/'+bookId+'/'+quantity,"","");
   }
 }

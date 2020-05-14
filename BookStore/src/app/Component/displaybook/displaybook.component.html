@@ -1,39 +1,40 @@
 
-<app-toolbar></app-toolbar>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+<app-toolbar [output] = "leng"></app-toolbar>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
    
     <div class="main" >
     <mat-card class="smallcard">
         <mat-toolbar>
             <mat-toolbar-row>
         <div fxLayout = "row">
-    <h3 style="font-family: 'Montserrat', sans-serif; float: left;"> Books <span style="font-size: 11px; color: rgb(139, 136, 136);"
+    <h3 style="font-family: 'Lato', sans-serif;font-size: 25px; float: left;"> Books <span style="font-size: 11px; color: rgb(139, 136, 136);"
         >({{ size }} items)</span
       ></h3>
-      
-        </div>
-    <div fxLayout = "row" style="margin-left: 70%; ">
+      <!-- <button (click)="SortNewestArrival()"> Newest Arrivals</button><button (click)="sortingl()"> Low to High</button> <button (click)="sortingh()">High to Low  </button> -->
+        </div>    
+    <div  style="margin-left: 70%; ">
         <button style="box-shadow: 0 0 1px rgba(0,0,0,0.6); height: 25px;">
     <mat-form-field>
-        <select matNativeControl required style="padding-left: 25px;border: none; outline: none;"(click)="sorting(value)">
-          <option value="true" style="font-family: 'Montserrat', sans-serif;"(click)="sorting(true)">Price: Low to High</option>
-          <option value="false"style="font-family: 'Montserrat', sans-serif;"(click)="sorting(false)">Price: High to Low</option>
-          <option value="mercedes"style="font-family: 'Montserrat', sans-serif;">Newest Arrivals</option>
-          <!-- <option value="audi"style="font-family: 'Montserrat', sans-serif;">Sort by relevance</option> -->
+        <select matNativeControl  (change)="modo($event.target.value)" required style="padding-left: 25px; border: none; outline: none;">
+          <option value="mod1" style="font-family: 'Lato', sans-serif;"><button (click)="sortingl()"> Low to High</button></option>
+          <option value="mod2"style="font-family: 'Lato', sans-serif;"><button (click)="sortingh()">High to Low  </button></option>
+          <option value="mod3"style="font-family: 'Lato', sans-serif;"><button (click)="SortNewestArrival()"> Newest Arrivals</button></option>
+         
         </select>
       </mat-form-field>
     </button>
-    </div>
+ </div>
     </mat-toolbar-row>
     </mat-toolbar>
 
-    <div class="row" *ngIf = "pageEvent">
+    <div class="row" *ngIf = "pageEvent"  >
         <div class="column" *ngFor = "let books of boo | booksearchpipe : bookSearch">
         <mat-card class="card" style="padding: 0px;">
-            <img src="assets\bookimage\bookimage.jpg" class="bookimage" /><br><br>
-            <span class="bookname" style="font-family: 'Raleway', sans-serif; ">{{books.bookName}}</span><br>
-            <h2 class="author" style="font-family: 'Raleway', sans-serif;">by {{books.authorName}}</h2>
-            <h2 class="price" >Rs.{{books.price}}</h2>
+          <div style="height: auto ;width: 100%; background-color: rgba(245, 245, 245, 0.486);">
+            <img src="assets\bookimage\{{books.image}}" class="bookimage" /><br><br></div>
+            <span class="bookname" style="font-family: 'Lato', sans-serif; ">{{books.bookName}}</span><br>
+            <h2 class="author" style="font-family: 'Lato', sans-serif;">by {{books.authorName}}</h2>
+            <h2 class="price" style="font-family: 'Lato', sans-serif;">Rs.{{books.price}}</h2>
             <div
             class="availablity"
             style="font-size: large;"
@@ -43,15 +44,15 @@
           </div>
           <div class="buttons">
             
-            <div  *ngIf="value[books.bookId-1]!=books.bookId; else elsecondition" style="margin-left: -13px;"> 
+            <div  *ngIf="value[books.bookId]!=books.bookId; else elsecondition" style="margin-left: -13px;"> 
               <button  class="button1" (output) = "getUpdatedNotes($event)" (click)="addtobag( books.bookId)
-              "style="font-family: 'Raleway', sans-serif;margin-top: 7px;">ADD TO BAG </button>
-              <button  class="button2" style="font-family: 'Raleway', sans-serif;">WISHLIST</button>
+              "style="font-family: 'Lato', sans-serif;margin-top: 7px;">ADD TO BAG </button>
+              <button  class="button2" style="font-family: 'Lato', sans-serif;">WISHLIST</button>
             </div>
 
             <ng-template  #elsecondition>
               <div style="margin-top: 10px;">
-                <button class="button3"  style="font-family: 'Raleway', sans-serif;">ADDED TO BAG</button>
+                <button class="button3"  style="font-family: 'Lato', sans-serif;">ADDED TO BAG</button>
               </div>
             </ng-template>
             </div>
@@ -67,3 +68,4 @@
 [pageSize] = "pageSize" 
 (page) = "pageEvent = getData($event)">
     </mat-paginator>
+

@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
   length : any = sessionStorage.length;
   value:any=[];
   UserId:number;
- // quantity:number;
+ 
   quantity = 1;
   customer:Customer=new Customer();
   type:any;
@@ -63,10 +63,7 @@ addre : Address = new Address();
   ngOnInit()  {
 
     this.getsession();
-    //this.getallBooks();
     
-    
-  
 }
 
 Toggle() {
@@ -93,7 +90,6 @@ Removecart(key){
   // this.value[2]=sessionStorage.getItem(key);
   sessionStorage.removeItem(key);
   window.location.reload();
-
   console.log("heyyy");
 }
 
@@ -115,6 +111,7 @@ for(let i=0;i<sessionStorage.length;i++){
  fun(type) {
   this.selectedtype = type;
 }
+
 OnRegisterSubmit(){
 console.log("type--"+this.selectedtype);
 
@@ -182,6 +179,8 @@ this.user = this.bid.userId;
     }); 
  }
 }
+
+
 addtcart(){
   for(let i=0;i<sessionStorage.length;i++){
     let key=sessionStorage.key(i);
@@ -201,12 +200,13 @@ addtcart(){
 }
 }
 
-getprice(quantity):any{
+getprice():any{
   for(let i=0;i<sessionStorage.length;i++){
     let key=sessionStorage.key(i);
     this.value[i]=sessionStorage.getItem(key);
     console.log("key",key);
-    this.cartService.getbookprice(this.value[i],quantity).subscribe((response:any)=>{
+    this.quantity=3;
+    this.cartService.getbookprice(this.value[i],this.quantity).subscribe((response:any)=>{
      console.log(response);
      this.book[i]=response.obj;
      console.log(this.book,'kkkkkkkk');
@@ -217,16 +217,50 @@ getprice(quantity):any{
   }
   }
 
-  addToCart(){
-    this.quantity = 1;
-    }
+  
     addItem(){
       this.quantity=this.quantity+1;
+      //localStorage.setItem(this.quantity);
+
       console.log('plus is : '+this.quantity)
+
+      // for(let i=0;i<sessionStorage.length;i++){
+      //   let key=sessionStorage.key(i);
+      //   this.value[i]=sessionStorage.getItem(key);
+      //   console.log("key",key);
+      //   this.cartService.getbookprice(this.value[i],this.quantity).subscribe((response:any)=>{
+      //    console.log(response);
+      //    this.book[i]=response.obj;
+      //    console.log(this.book,'kkkkkkkk');
+      //   // console.log(this.book.bookName,'kkkkkkkk111111111111111111');
+      //    return this.book;
+      //   });
+        
+      // }
       }
 
       removeItem(){
         this.quantity=this.quantity-1;
         console.log('plus is : '+this.quantity)
+        
+      // for(let i=0;i<sessionStorage.length;i++){
+      //   let key=sessionStorage.key(i);
+      //   this.value[i]=sessionStorage.getItem(key);
+      //   console.log("key",key);
+      //   this.cartService.getbookprice(this.value[i],this.quantity).subscribe((response:any)=>{
+      //    console.log(response);
+      //    this.book[i]=response.obj;
+      //    console.log(this.book,'kkkkkkkk');
+      //   // console.log(this.book.bookName,'kkkkkkkk111111111111111111');
+      //    return this.book;
+      //   });
+        
+      // }
         }
+
+
+        removelocal(){
+          sessionStorage.clear();
+        }
+        
 }

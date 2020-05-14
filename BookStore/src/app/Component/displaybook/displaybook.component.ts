@@ -12,7 +12,7 @@ export class DisplaybookComponent implements OnInit {
 
 
   boo: any;
-  book: any;
+  book=[];
   books: BookModule = new BookModule();
   items = [];
   pageofItems : Array<BookModule> = new Array<BookModule>();
@@ -26,25 +26,24 @@ export class DisplaybookComponent implements OnInit {
   lengths = 24;
   pageSize = 8;
   data:any;
-  s:any;
+  reminder:any;
+  s:any;selectoption:any;
   value:any=[];
-  @Output() output : EventEmitter<any> = new EventEmitter();
-
+  // @Output() output : EventEmitter<any> = new EventEmitter();
+leng : any;
   constructor( private service : BookService, private snakbar : MatSnackBar) { }
  
   ngOnInit() {
     
-
+    this.leng = sessionStorage.length;
     for (let i = 0; i < sessionStorage.length; i++) {
       let key = sessionStorage.key(i);
-      this.value[i] = sessionStorage.getItem(key);
+      this.value[sessionStorage.getItem(key)] = sessionStorage.getItem(key);
       console.log("key ::" + key);
     }
     console.log(this.value);
 
-    this.value.sort();
-    console.log(this.value);
-
+    
     // this.getallBooks();
     // this.items = Array(11).fill(0).map((x, i) => ( { array : this.book }));  
     // this.addtobag();
@@ -53,8 +52,6 @@ export class DisplaybookComponent implements OnInit {
 
   getallBooks() {
  
-  
-  
     this.service.getallBooks().subscribe( response => {
      this.book = response.bookList;
      this.obj = response.bookList;
@@ -65,36 +62,55 @@ export class DisplaybookComponent implements OnInit {
     });
     this.getSearchBookData();
   }
-  sorting(value) {
-    if(value===1){
-     this.data=true;
+
+  modo(value: string){
+    switch(value) {
+      case "mod1":
+         this.sortingl();
+         break;
+      case "mod2":
+         this.sortingh();
+         break;
+      case "mod3":
+         this.SortNewestArrival();
+         break;
+    }
+  }
+
+  sortingl(){
+    this.data=true;
     this.service.sorting(this.data).subscribe( response => {
-      this.book = response.bookList;
+      this.boo = response.bookList;
      this.obj = response.bookList;
     //  this.size = response.bookList.length;
     //  this.pageofItems = response.bookList;
-     console.log("Books ::::"+this.obj);
-      return this.book;
+    console.log(this.boo,"booklist"); 
+   // console.log("Books ::::"+this.book);
+
+      return this.boo;
     });
-    }
-    if(value===2){
-      this.data=false;
-     this.service.sorting(this.data).subscribe( response => {
-       this.book = response.bookList;
-      this.obj = response.bookList;
-     //  this.size = response.bookList.length;
-     //  this.pageofItems = response.bookList;
-      console.log("Books ::::"+this.obj);
-       return this.book;
-     });
-     }
-    
+    this.getSearchBookData();
+  }
+  sortingh(){
+    this.data=false;
+    this.service.sorting(this.data).subscribe( response => {
+      this.boo = response.bookList;
+     this.obj = response.bookList;
+    //  this.size = response.bookList.length;
+    //  this.pageofItems = response.bookList;
+    console.log(this.boo,"booklist"); 
+   // console.log("Books ::::"+this.book);
+
+      return this.boo;
+    });
+    this.getSearchBookData();
   }
 
     addtobag( bookId : any)
     {
   sessionStorage.setItem(bookId,bookId);
   this.getOutput();
+  this.ngOnInit();
 }
 
 getData(event?: PageEvent) {
@@ -104,11 +120,12 @@ getData(event?: PageEvent) {
                  this.size = result.bookList.length;
                  console.log(" data:::"+result.bookList);
   });
+  this.getSearchBookData();
   return event;
 }
 
 getOutput() {
-    this.output.emit("ok");
+    // this.output.emit("ok");
   }
 
   getUpdatedNotes(event) {
@@ -126,19 +143,13 @@ getSearchBookData() {
   
   
 }
-// getsession(){
-//   let s=sessionStorage.getItem('key');
-//   console.log(s,'asaaaaaaaaaaaaa');
-// for(let i=0;i<sessionStorage.length;i++){
-//   let key=sessionStorage.key(i);
-//   this.value[i]=sessionStorage.getItem(key);
-//   console.log("key",key);
-//   this.service.getBokkByid(this.value[i]).subscribe((response:any)=>{
-//     console.log(response);
-//     this.book=response.getBokkByid;
-    
-//   });
-  
-// }
-// }
+SortNewestArrival(){
+  this.service.SortNewestArrival().subscribe((response:any)=>{
+    this.boo = response.bookList;
+    console.log(this.boo,"booklist");
+      this.obj = response.bookList;
+  });
+  this.getSearchBookData();
+}
+
 }

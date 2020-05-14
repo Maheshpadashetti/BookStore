@@ -37,8 +37,15 @@ export class BookService {
   getPagination(data) {
     return this.http.get<any>( environment.BookUrl+environment.cusUrl+'/'+data);
   }
-  sorting(value){
-    return this.http.get<any>(environment.BookUrl+environment.sorting+'?value='+value);
+  sorting(value):Observable<any>{
+    console.log(value,'value sorting');
+    
+    return this.http.get(environment.BookUrl+environment.sorting+'?value='+value);
+  }
+  SortNewestArrival():Observable<any>{
+    console.log('sorting by new');
+    
+    return this.http.get<any>(environment.BookUrl+environment.SortNewestArrival);
   }
 
 }

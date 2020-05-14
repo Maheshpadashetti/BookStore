@@ -1,5 +1,5 @@
-<div class="toolbar">
-    <img src="assets\bookimage\book.jpg" class="logo" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"><div class="toolbar">
+    <img src="assets\bookimage\book.jpg" class="logo" routerLink="/Displaybook" />
     <span class="title">BookStore</span>
     <div class="search">
         
@@ -7,11 +7,13 @@
             
           </div>
           <div class="searchboxinput">
-            
+           
+            <button mat-icon-button style="height: 35px; width:30px;margin-top:10px;border-left: 0.31em;  border-right: transparent;">
+              <img src="assets\bookimage\search.png" style="width: 20px;height:20px;margin-top:0px ;margin-left:0em">
+            </button>
           
             <input  type="text" placeholder="Search" [(ngModel)]="bookName"
-            (input)="bookSearch()" class="" style="  display: flex;height: 30px; width: 500px;margin-top: 10px;border-radius: 0.31em;border: none;outline: none;" />
-            <img src="assets\bookimage\search.png" style="width: 30px;height:30px;margin-top:10px ;margin-left:-2em">
+            (input)="bookSearch()" class="" style="  display: flex;height: 30px; width: 500px;margin-top: 10px;border-left: transparent; border-radius: 0em;border: none;outline: none;" />
           </div>
         
       </div>
@@ -24,7 +26,7 @@
             <img src="assets\bookimage\cart.jpg"
             style=" display: flex; margin-left: 0px; margin-top: 5px;height: 34px;width: 34px;"/>
         </a>
-        <span (output) = "getUpdatedNotes($event)" matBadge="{{length}}" matBadgeOverlap="false" style="color: white;"></span>
+        <span (output) = "getUpdatedNotes($event)" matBadge="{{output}}" matBadgeOverlap="false" style="color: white;"></span>
       </div>
 
  </div>

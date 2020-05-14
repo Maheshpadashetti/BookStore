@@ -15,7 +15,7 @@
     align-items: center;
     touch-action: pinch-zoom;
     border:1px solid whitesmoke;
-    background-color: whitesmoke;
+    background-color: white;
     border-bottom: whitesmoke;
     margin-left: 8%;
 }
@@ -24,7 +24,7 @@
     width: 240px;
     background-color: white;
     align-items: center;
-    box-shadow: 0 0 1px rgba(0,0,0,0.6);
+    box-shadow: 0 0 2px rgba(0,0,0,0.6);
     align-content: center;
 }
 .column {
@@ -75,9 +75,9 @@
    }
    .button1{
     margin-left: 10%;
-    font-size: 10px;
-    height: 23px;
-    width: 90px;
+    font-size: 11px;
+    width: 93px;
+height: 29px;
        background-color:#A03037;
        border-color:#A03037;
        color: white;
@@ -87,21 +87,29 @@
    }
    .button2{
        margin-left: 8%;
-       font-size: 10px;
-    height: 23px;
-    width: 90px;
+       font-size: 11px;
+       width: 93px;
+       height: 29px;
 
     outline: none;
 }
 .button3{
     margin-left: 10%;
-    font-size: 10px;
-    height: 23px;
-    width: 200px;
+    font-size: 11px;
+    width: 191px;
+height: 29px;
        background-color: rgba(36, 120, 230, 0.829);
        border-color: rgba(36, 120, 230, 0.829);
        color: white;
-       
+       margin-top: 5px;
        outline:#A03037;
     
    }
+   .style{
+      // position: absolute;
+    //    position: static;
+    height: 30%;
+    display: flex;
+    width: 45%;
+    background-color: rgba(36, 120, 230, 0.829);
+}
