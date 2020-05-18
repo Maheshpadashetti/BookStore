@@ -288,8 +288,21 @@ opacity: 1;
 //       background-color: transparent;
 //     color: red;
 // }
-:host ::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color:orange;
-}.mat-radio-button.mat-accent .mat-radio-inner-circle{
-  background-color:blue;
-}
+// :host ::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle {
+//   background-color:orange;
+// }.mat-radio-button.mat-accent .mat-radio-inner-circle{
+//   background-color:blue;
+// }
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  opacity: 0.5 !important; /*click effect color change*/
+  background-color: white!important;
+  }
+  
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: blue!important; /*inner circle color change*/
+  }
+  
+  ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color:blue!important; /*outer ring color change*/
+  }
+  

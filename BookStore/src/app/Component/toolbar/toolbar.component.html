@@ -7,9 +7,11 @@
             
           </div>
           <div class="searchboxinput">
-           
+          
             <button mat-icon-button style="height: 35px; width:30px;margin-top:10px;border-left: 0.31em;  border-right: transparent;">
-              <img src="assets\bookimage\search.png" style="width: 20px;height:20px;margin-top:0px ;margin-left:0em">
+              <mat-icon>search</mat-icon>
+              <!-- <img src="assets\bookimage\search.png" style="width: 20px;height:20px;margin-top:0px ;margin-left:0em"> -->
+
             </button>
           
             <input  type="text" placeholder="Search" [(ngModel)]="bookName"
@@ -26,7 +28,7 @@
             <img src="assets\bookimage\cart.jpg"
             style=" display: flex; margin-left: 0px; margin-top: 5px;height: 34px;width: 34px;"/>
         </a>
-        <span (output) = "getUpdatedNotes($event)" matBadge="{{output}}" matBadgeOverlap="false" style="color: white;"></span>
+        <span (click) = "function" matBadge="{{output}}" matBadgeOverlap="false" style="color: white;"></span>
       </div>
 
  </div>

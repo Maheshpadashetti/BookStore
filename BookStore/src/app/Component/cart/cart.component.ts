@@ -31,6 +31,7 @@ export class CartComponent implements OnInit {
   bookSearch: any;
   bookName: string;
   length : any = sessionStorage.length;
+  si : any = sessionStorage.length;
   value:any=[];
   UserId:number;
  
@@ -61,10 +62,8 @@ addre : Address = new Address();
     Other=new FormControl('',[Validators.required]);
 
   ngOnInit()  {
-
-    this.getsession();
-    
-}
+   this.getsession();
+    }
 
 Toggle() {
   if( this.select == false) {
@@ -93,7 +92,7 @@ Removecart(key){
   console.log("heyyy");
 }
 
-getsession():any{
+getsession() {
 for(let i=0;i<sessionStorage.length;i++){
   let key=sessionStorage.key(i);
   this.value[i]=sessionStorage.getItem(key);
@@ -137,6 +136,7 @@ if(this.selectedtype == "Home") {
       console.log(response,'Success...');
       console.log("data"+Customer.phonenumber);
       console.log("data+++"+this.phoneNumber.value);
+      this.addtcart(this.user);
 //       let navigationExtras : NavigationExtras =  {
 // queryParams : {
 //   "bookId" :  this.book,
@@ -145,6 +145,7 @@ if(this.selectedtype == "Home") {
 //       }
 //      return this.route.navigate(['/userinfo'], )
     }); 
+   
  }
  if(this.selectedtype == "Work") {
   const Customer = {
@@ -159,8 +160,9 @@ if(this.selectedtype == "Home") {
       console.log(response,'Success...');
       console.log("data"+Customer.phonenumber);
       console.log("data+++"+this.phoneNumber.value);
-      
+      this.addtcart(this.user);
     }); 
+    // this.addtcart( this.user);
  }
  if(this.selectedtype == "Other") {
   const Customer = {
@@ -172,24 +174,25 @@ if(this.selectedtype == "Home") {
     this.cartService.post(Customer).subscribe((response:any)=>{
       this.bid = response.obj;
 this.user = this.bid.userId;
-      console.log(response,'Success...');
+      console.log(response,'Success...',this.user);
       console.log("data"+this.bid.userId);
       console.log("data+++"+this.phoneNumber.value);
-      
+      this.addtcart(this.user);
     }); 
+    // this.addtcart(this.user);
  }
 }
 
 
-addtcart(){
+addtcart( user : any){
   for(let i=0;i<sessionStorage.length;i++){
     let key=sessionStorage.key(i);
     this.value[i]=sessionStorage.getItem(key);
     console.log("key",key);
-    console.log("ghgvvb====="+this.user);
+    console.log("ghgvvb====="+user);
     
-    
-    this.cartService.addtocart(this.value[i],this.num).subscribe((response:any)=>{
+    console.log("---"+this.bid);
+    this.cartService.addtocart(this.value[i],user).subscribe((response:any)=>{
      console.log(response);
      this.book[i]=response.obj;
      console.log(this.book,'kkkkkkkk');
@@ -224,38 +227,14 @@ getprice():any{
 
       console.log('plus is : '+this.quantity)
 
-      // for(let i=0;i<sessionStorage.length;i++){
-      //   let key=sessionStorage.key(i);
-      //   this.value[i]=sessionStorage.getItem(key);
-      //   console.log("key",key);
-      //   this.cartService.getbookprice(this.value[i],this.quantity).subscribe((response:any)=>{
-      //    console.log(response);
-      //    this.book[i]=response.obj;
-      //    console.log(this.book,'kkkkkkkk');
-      //   // console.log(this.book.bookName,'kkkkkkkk111111111111111111');
-      //    return this.book;
-      //   });
-        
-      // }
+
       }
 
       removeItem(){
         this.quantity=this.quantity-1;
         console.log('plus is : '+this.quantity)
         
-      // for(let i=0;i<sessionStorage.length;i++){
-      //   let key=sessionStorage.key(i);
-      //   this.value[i]=sessionStorage.getItem(key);
-      //   console.log("key",key);
-      //   this.cartService.getbookprice(this.value[i],this.quantity).subscribe((response:any)=>{
-      //    console.log(response);
-      //    this.book[i]=response.obj;
-      //    console.log(this.book,'kkkkkkkk');
-      //   // console.log(this.book.bookName,'kkkkkkkk111111111111111111');
-      //    return this.book;
-      //   });
-        
-      // }
+      
         }
 
 
@@ -263,4 +242,22 @@ getprice():any{
           sessionStorage.clear();
         }
         
+
+        addquantity(){
+          for(let i=0;i<sessionStorage.length;i++){
+            let key=sessionStorage.key(i);
+            this.value[i]=sessionStorage.getItem(key);
+            console.log("key",key);
+            console.log("ghgvvb====="+this.user);
+        
+            this.cartService.addquantity(this.value[i],this.quantity).subscribe((response:any)=>{
+             console.log(response);
+             this.book[i]=response.obj;
+             console.log(this.book,'kkkkkkkk');
+            // console.log(this.book.bookName,'kkkkkkkk111111111111111111');
+            //  return this.book;
+         
+        });
+        }
+        }
 }

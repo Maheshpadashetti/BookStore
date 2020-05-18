@@ -5,18 +5,21 @@
 export const environment = {
   production: false,
 
-  BookUrl:"http://localhost:8080/books/",
-  getallbooksurl:"getbooks",
-  getbookbyIdurl:"getbookbyId",
-  addandupdatecartUrl:"addandupdatecart",
-  sorting:"sorting",
-  SortNewestArrival:"SortNewestArrival",
+  BookUrl:"http://localhost:8080/",
+  getallbooksurl:"",
+  getbookbyIdurl:"books/",
+  addandupdatecartUrl:"books/addandupdatecart",
+  sorting:"books/sorting",
+  SortNewestArrival:"books/unsorting",
+  cusUrl : "books/pagewise",
 
   CartUrl:"http://localhost:8080/",
-  addUrl:"addcustomer",
-  cusUrl : "getpagewise",
-  addtocart:"addtocart",
-  getbookprice:"getbookprice"
+  addUrl:"customers/addcustomer",
+  addtocart:"carts/addcart",
+  getbookprice:"getbookprice",
+
+  quantity:"http://localhost:8080/",
+  addbooksquantity:"addbooksquantity"
 };
 
 
