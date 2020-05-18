@@ -11,6 +11,7 @@ export class ToolbarComponent implements OnInit {
   bookName: string;
  length : any;
  @Input() output : any;
+ @Input() function : any;
   constructor( private service : BookService, ) { }
 
   ngOnInit(): void {

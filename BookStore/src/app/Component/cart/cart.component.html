@@ -1,4 +1,4 @@
-<app-toolbar></app-toolbar>
+<app-toolbar [output] = "si" ></app-toolbar>
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <!-- <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step> -->
@@ -11,7 +11,7 @@
           color:black"> Mycart({{length}})</mat-label>
           <div class="column"  *ngFor = "let books of book ">
           <mat-card class="card" style="padding: 10px; ">
-              <img src="assets\bookimage\{{books.image}}" class="bookimage" />
+              <img src="assets\bookimage\{{books.image}}" class="bookimage" >
               <div class="details" >
                 <span class="bookname" style="font-family: 'Lato', sans-serif; ">{{books.bookName}}</span><br>
                 <h2 class="author" style="font-family: 'Lato', sans-serif;">by{{books.authorName}}</h2>
@@ -23,7 +23,7 @@
                 </th>
                 <td mat-cell  class="rows-blocks">
                   <div
-                    style="display: flex; flex-direction: row; margin-left: -2.0em; margin-top: 6em; border-radius: 2em;"
+                    style="display: flex; flex-direction: row; margin-left: -2.0em; margin-top: 7em; border-radius: 2em;"
                   >
                   
                     <div style="display: flex; flex-direction: row;margin-bottom: 10px;">
@@ -136,7 +136,7 @@
                   
                   <div class="buttons" *ngIf = "!selected" (click) = "tog()">
                     <button class="button3"  style="font-family: 'Lato', sans-serif;margin-left: 67%;
-                    margin-bottom: 10%;"(click)="OnRegisterSubmit(); addtcart(); getprice()"  >CONTINUE</button>
+                    margin-bottom: 10%;"(click)="OnRegisterSubmit()"  >CONTINUE</button>
                 </div>
                   </form>
                   </mat-card>
@@ -163,7 +163,7 @@
                       </mat-card>
                     </div>
                     <div >
-                      <button class="button2"  style="font-family: 'Raleway', sans-serif; "  routerLink="/greeting"(click)="addtcart(); removelocal()">CHECKOUT</button>
+                      <button class="button2"  style="font-family: 'Raleway', sans-serif; "  routerLink="/greeting">CHECKOUT</button>
                   </div></div>
                     </div>
 
